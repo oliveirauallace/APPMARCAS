@@ -1,0 +1,173 @@
+{
+    "feeds": [
+        {
+            "_id": 1,
+            "marca": "Teiu",
+            "produto": {
+                "nome": "Tira manchas Mr Blue",
+                "descricao": "Alto poder contra as manchas. Delicado com os tecidos. REMOVE MANCHAS DE: Ovo, manteiga, leite com chocolate, ketchup, groselha, requeijão, molho madeira, papinha de neném, sangue, sujeira corporal de colarinhos e punhos. ",
+                "preco": "17.99",
+                "precopromocao": "13.99",
+                "modoutilizacao": "Tira Manchas Mr. Blue foi desenvolvido exclusivamente para facilitar a lavagem e remoção de manchas em tecidos" ,
+                "cuidados": "Conserve fora do alcance das crianças e dos animais domésticos. Não utilize em utensílios domésticos. Não usar em tecidos de lã e seda. Siga sempre as instruções de uso da embalagem do MR BLUE. ",
+                "superficie":"Tecidos",
+                "image": "../../assets/imgs/imagem001.jpg"
+            }
+        },
+        {
+            "_id": 2,
+            "marca": "Teiu",
+            "produto": {
+                "nome": "Lava Roupas Especial Coco",
+                "descricao": "À base de coco natural e com branqueador óptico, o que garante delicadeza e alta perfomance na lavagem. ",
+                "preco": "15.80",
+                "precopromocao": "14.70",
+                "modoutilizacao": "Ideal para roupas finas e delicadas." ,
+                "cuidados": "Nunca despeje o produto diretamente sobre as roupas sem diluí-lo antes na água. Conserve fora do alcance das crianças e dos animais domésticos.",
+                "superficie":"Adicionar na máquina de lavar",
+                "image": "../../assets/imgs/imagem002.jpg"
+            }
+        },
+        {
+            "_id": 3,
+            "marca": "Teiu",
+            "produto": {
+                "nome": "Gel Teiú",
+                "descricao": "É um produto inovador, desenvolvido pela TEIÚ a partir de pesquisas e rigorosos testes de qualidade e eficiência. Sua ação de limpador de uso geral é muito eficiente na remoção das sujeiras mais difíceis.",
+                "preco": "8.00",
+                "precopromocao": "7.20",
+                "modoutilizacao": "O GEL TEIÚ tem múltiplo uso e limpa sem tirar o brilho." ,
+                "cuidados": "Conserve fora do alcance das crianças e dos animais domésticos.",
+                "superficie":"Ambientes como cozinha, banheiro, calçadas e áreas com grande circulação de pessoas.",
+                "image": "../../assets/imgs/imagem003.jpg"
+            }
+        },
+        {
+            "_id": 4,
+            "marca": "Teiu",
+            "produto": {
+                "nome": "Água Sanitária Teiú",
+                "descricao": "A ÁGUA SANITÁRIA TEIÚ conquistou o coração das donas de casa. Desenvolvida para facilitar a limpeza do dia a dia, a embalagem da ÁGUA SANITÁRIA TEIÚ tem formato anatômico, desenho moderno, tampa de rosca e sistema de dosagem. ",
+                "preco": "5.50",
+                "precopromocao": "4.40",
+                "modoutilizacao": "Utilizar uma colher de sopa rasa (cerca de 15 ml) de água sanitária para cada litro de água." ,
+                "cuidados": "Manter o máximo de cuidados com os olhos. Manter fora do alcance de crianças e animais",
+                "superficie":"Limpeza de banheiras, pias, vidros, louças, porcelanas, mármores, cerâmicas, vasos sanitários e caixa d’água",
+                "image": "../../assets/imgs/imagem003.jpg"
+            }
+        },
+        {
+            "_id": 5,
+            "marca": "Teiu",
+            "produto": {
+                "nome": "Alvejante Perfumado Teiú",
+                "descricao": "A presença do cloro ativo na sua composição garante ao ALVEJANTE TEIÚ uma excelente ação de limpeza de ambientes da sua casa e roupas, além de proporcionar um suave perfume. A sua embalagem tem formato anatômico, desenho moderno, tampa de rosca e sistema de dosagem.",
+                "preco": "8.00",
+                "precopromocao": "6.99",
+                "modoutilizacao": "Utilizar uma colher de sopa rasa (cerca de 20 ml) de alvejante para cada litro de água." ,
+                "cuidados": "Manter o máximo de cuidados com os olhos. Manter fora do alcance de crianças e animais",
+                "superficie":"Casa e Roupas",
+                "image": "../../assets/imgs/imagem003.jpg"
+            }
+        },
+        {
+            "_id": 6,
+            "marca": "Teiu",
+            "produto": {
+                "nome": "Lava Roupas Líquido Teiú",
+                "descricao": "Abrir a gaveta ou o guarda-roupas e sentir o perfume de roupa limpa é tudo de bom! O LAVA ROUPAS LÍQUIDO TEIÚ proporciona esta sensação todos os dias para você. Sua fórmula tem alta performance, garantindo mais rendimento e ação eficiente na limpeza e perfumação das suas roupas.",
+                "preco": "4.50",
+                "precopromocao": "3.20",
+                "modoutilizacao": "Adicionar uma colher de sopa rasa de lava oupas líquidos para cada litro de água. " ,
+                "cuidados": "Manter o máximo de cuidados com os olhos. Manter fora do alcance de crianças e animais",
+                "superficie":"Roupas",
+                "image": "../../assets/imgs/imagem003.jpg"
+            }
+        },
+        {
+            "_id": 7,
+            "marca": "Teiu",
+            "produto": {
+                "nome": "Multiuso Teiú",
+                "descricao": "Na limpeza do dia a dia da sua casa, o MULTIUSO TEIÚ agiliza a sua vida. Fácil de aplicar, proporciona limpeza eficiente, elimina gorduras, remove sujeiras mais difíceis e com suave perfume. Ideal para ser usado em diferentes superfícies e na remoção de diferentes tipos de sujeiras.",
+                "preco": "6.00",
+                "precopromocao": "5.50",
+                "modoutilizacao": "Coloque água em um recipiente e adicione a quantidade de Multiuso Teiu nesse recipiente e esfregue com uma vassoura a superficie, " ,
+                "cuidados": "Conserve fora do alcance das crianças e dos animais domésticos.",
+                "superficie":"Ceramicas, paredes, etc.",
+                "image": "../../assets/imgs/imagem003.jpg"
+            }
+        },
+        {
+            "_id": 8,
+            "marca": "Teiu",
+            "produto": {
+                "nome": "Sabão de Coco Teiú",
+                "descricao": "À base de coco natural e produzido artesanalmente, o SABÃO DE COCO TEIÚ garante uma lavagem eficiente de roupas finas e delicadas. É um produto tradicional, com qualidade superior e grande aprovação dos consumidores.",
+                "preco": "6.00",
+                "precopromocao": "5.60",
+                "modoutilizacao": "Passe a barra de sabão sobre a superfice do tecido para limpeza profunda" ,
+                "cuidados": "Conserve fora do alcance das crianças e dos animais domésticos.",
+                "superficie":"Roupas finas e delicadas",
+                "image": "../../assets/imgs/imagem003.jpg"
+            }
+        },
+        {
+            "_id": 9,
+            "marca": "Teiu",
+            "produto": {
+                "nome": "Sabão Super Teiú",
+                "descricao": "Produzido com a mais alta tecnologia, o sabão em barra SUPER TEIÚ é mais econômico, tem maior rendimento e é super eficiente contra as sujeiras. É glicerinado, tem múltiplo uso e pode ser utilizado na limpeza da casa, das roupas e louças.",
+                "preco": "3.50",
+                "precopromocao": "2.90",
+                "modoutilizacao": "Aplique o sabão em barra nas superficies desejadas para limpeza" ,
+                "cuidados": "Conserve fora do alcance das crianças e dos animais domésticos.",
+                "superficie":"Casa, Louça e Roupas",
+                "image": "../../assets/imgs/imagem003.jpg"
+            }
+        },
+        {
+            "_id": 10,
+            "marca": "Teiu",
+            "produto": {
+                "nome": "Lava Louças Teiú",
+                "descricao": "O LAVA LOUÇAS TEIÚ foi desenvolvido para garantir o máximo de rendimento na limpeza das louças. Por ser testado dermatologicamente, não agride a pele das mãos, podendo ser utilizado com toda segurança.",
+                "preco": "5.60",
+                "precopromocao": "4.40",
+                "modoutilizacao": "Adicione a quantidade necessária de lava louça para em uma esponja antiaderente e esfregue nas superficies desejadas. É possível também colocar em água para utilização." ,
+                "cuidados": "Conserve fora do alcance das crianças e dos animais domésticos.",
+                "superficie":"Louças",
+                "image": "../../assets/imgs/imagem003.jpg"
+            }
+        },
+        {
+            "_id": 11,
+            "marca": "Teiu",
+            "produto": {
+                "nome": "Pedra Sanitária Teiú",
+                "descricao": "Proporciona melhor perfumação no vaso sanitário em cada descarga. O seu poder odorizante sanitário proporciona qualidade e economia na sua utilização.",
+                "preco": "4.00",
+                "precopromocao": "3.50",
+                "modoutilizacao": "Utilizar em vasos sanitários com o auxilio da peça protetora que é utilizada como suporte" ,
+                "cuidados": "Conserve fora do alcance das crianças e dos animais domésticos.",
+                "superficie":"Vasos Sanitários",
+                "image": "../../assets/imgs/imagem003.jpg"
+            }
+        },
+        {
+            "_id": 12,
+            "marca": "Teiu",
+            "produto": {
+                "nome": "Esponja Antiaderente Teiú",
+                "descricao": "Ideal para utilização em superfícies delicadas. Tem maior durabilidade, ação superior de limpeza e agente antibactéria.",
+                "preco": "3.50",
+                "precopromocao": "3.00",
+                "modoutilizacao": "Esfregar nas louças" ,
+                "cuidados": "Conserve fora do alcance das crianças e dos animais domésticos.",
+                "superficie":"Louças",
+                "image": "../../assets/imgs/imagem003.jpg"
+            }
+        }
+         
+    ]
+}

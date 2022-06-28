@@ -1,0 +1,35 @@
+version: '3'
+services:
+  feeds:
+    image: produtos
+    build: ./dockerfiles/servicos/
+    hostname: feeds
+    ports:
+      - '5001:5000'
+    volumes:
+      - './servicos/feeds:/servico'
+    command: python3 servico.py
+  comentarios:
+    image: produtos
+    build: ./dockerfiles/servicos/
+    hostname: comentarios
+    ports:
+      - '5002:5000'
+    volumes:
+      - './servicos/comentarios:/servico'
+    command: python3 servico.py
+  bancodados:
+    image: mysql
+    hostname: bancodados
+    ports:
+      - '5004:3306'
+    environment:
+      - MYSQL_ROOT_PASSWORD=admin
+  arquivos:
+    image: arquivos
+    build: ./dockerfiles/nginx
+    volumes:
+      - './imagens:/usr/share/nginx/html'
+    hostname: arquivos
+    ports:
+      - '5005:80'

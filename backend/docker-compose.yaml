@@ -9,14 +9,14 @@ services:
     volumes:
       - './servicos/feeds:/servico'
     command: python3 servico.py
-  comentarios:
+  avaliacao:
     image: produtos
     build: ./dockerfiles/servicos/
-    hostname: comentarios
+    hostname: avaliacao
     ports:
       - '5002:5000'
     volumes:
-      - './servicos/comentarios:/servico'
+      - './servicos/avaliacao:/servico'
     command: python3 servico.py
   bancodados:
     image: mysql

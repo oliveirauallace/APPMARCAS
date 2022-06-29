@@ -6,20 +6,19 @@ import { ScrollView } from "react-native-gesture-handler";
 import {NomedoProduto, DescricaodoProduto, PrecodoProduto, TextPromocional, NomeDetalhesProduto, 
 EsquerdaDaMesmaLinha, Espacamento, Cabecalho, TextComentarios, ViewAvaliacao, 
 ImageProdutoDetalhe, TextAvalicao, AutorDataAvalicao } from "../../assets/style";
-import bancoProdutos from "../../assets/produtos.json";
-import bancoComentarios from "../../assets/avaliacoes.json";
 import LogoMarca from "../../assets/imgs/avatar.jpg";
+import { getFeed, getAvaliacao } from "../../api/index.old";
 
 const Paginas = 2;
 
 export default class Detalhes extends React.Component {
     constructor(props) {
         super(props);
-
-        const { feedId } = this.props.navigation.state.params;
+        
         this.state = {
-            feedId: feedId,
+            feedId: this.props.navigation.state.params.feedId,
             feed: null,
+
             avaliacoescliente: [],
             proximaPagina: 1,
             atualizandoAvaliacoes: false
@@ -34,30 +33,28 @@ export default class Detalhes extends React.Component {
     carregarFeed = () => {
         const { feedId } = this.state;
 
-        const feeds = bancoProdutos.feeds.filter((feed) => feed._id == feedId);
-        this.setState({
-            feed: feeds[0]
-        });
+        getFeed(feedId).then((response) => 
+            this.setState({
+                feed: response
+            })
+        )
+        .catch((erro) => {
+            console.log("Houve um erro ao carregar o feed: " + erro)
+        })
+    
     }
 
     carregarAvaliacao = () => {
-        const { feedId, proximaPagina } = this.state;
+        const { feedId , avaliacao} = this.state;
 
-        const avalicaoClientes = bancoComentarios.avaliacoescliente.filter((avalicaocliente) =>
-            avalicaocliente.feed === feedId);
-
-        let avaliacao = [];
-        avalicaoClientes.map((avalicaocliente) => {
-            if (avaliacao.length <= proximaPagina * Paginas) {
-                avaliacao.push(avalicaocliente);
-            }
+        getAvaliacao(feedId).then((response) => 
+            this.setState({
+                avaliacao: response
+            })
+        )
+        .catch((erro) => {
+            console.log("Houve um erro ao carregar o feed: " + erro)
         })
-
-        this.setState({
-            avaliacao: avaliacao,
-            proximaPagina: proximaPagina + 1,
-            atualizandoAvaliacoes: false
-        });
     }
 
     exibirAvaliacao = (avaliacao) => {
@@ -65,10 +62,10 @@ export default class Detalhes extends React.Component {
             <View>
                 <ViewAvaliacao>
                     <EsquerdaDaMesmaLinha>
-                        <AutorDataAvalicao>{avaliacao.user.nome}</AutorDataAvalicao>
-                        <AutorDataAvalicao>{avaliacao.diahora}</AutorDataAvalicao>
+                        <AutorDataAvalicao>{avaliacao.user.name}</AutorDataAvalicao>
+                        <AutorDataAvalicao>{avaliacao.datetime}</AutorDataAvalicao>
                     </EsquerdaDaMesmaLinha>
-                    <TextAvalicao>"{avaliacao.avalicaocliente}"</TextAvalicao>
+                    <TextAvalicao>"{avaliacao.content}"</TextAvalicao>
                 </ViewAvaliacao>
                 <Espacamento/>
             </View>
@@ -90,22 +87,22 @@ export default class Detalhes extends React.Component {
                             <ImageProdutoDetalhe source={LogoMarca}></ImageProdutoDetalhe>
                             <View style={{ padding: 8 }}>
                                 <Espacamento />
-                                <NomedoProduto>{feed.produto.nome}</NomedoProduto>  
+                                <NomedoProduto>{feed.product.name}</NomedoProduto>  
                                 <Espacamento />
-                                <PrecodoProduto>{"Preço R$" + feed.produto.preco + " "}</PrecodoProduto> 
+                                <PrecodoProduto>{"Preço R$" + feed.product.price + " "}</PrecodoProduto> 
                                 <Espacamento />
-                                <PrecodoProduto>{"Preço Promocional* R$" + feed.produto.precopromocao + " "}</PrecodoProduto>
+                                <PrecodoProduto>{"Preço Promocional* R$" + feed.product.promocao + " "}</PrecodoProduto>
                                 <Espacamento /> 
                                 <Espacamento />
                                 <Espacamento />
                                 <NomeDetalhesProduto>Modo de utilização: </NomeDetalhesProduto>
-                                <DescricaodoProduto>{feed.produto.modoutilizacao}</DescricaodoProduto> 
+                                <DescricaodoProduto>{feed.product.utilizacao}</DescricaodoProduto> 
                                 <Espacamento />
                                 <NomeDetalhesProduto>Cuidados: </NomeDetalhesProduto>
-                                <DescricaodoProduto>{feed.produto.cuidados}</DescricaodoProduto> 
+                                <DescricaodoProduto>{feed.product.cuidados}</DescricaodoProduto> 
                                 <Espacamento />
                                 <NomeDetalhesProduto>Tipos de superfícies: </NomeDetalhesProduto>
-                                <DescricaodoProduto>{feed.produto.superficie}</DescricaodoProduto> 
+                                <DescricaodoProduto>{feed.product.superficie}</DescricaodoProduto> 
                                 <Espacamento />
                                 <TextPromocional>* Preço Promocional acima de 4 unidades</TextPromocional> 
                             </View>

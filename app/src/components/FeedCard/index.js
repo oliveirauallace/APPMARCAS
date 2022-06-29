@@ -4,16 +4,16 @@ import { Card } from "react-native-elements";
 import {ImageProduto, NomedoProduto, DescricaodoProdutoFeed, EsquerdaDaMesmaLinha} from "../../assets/style";
 import LogoMarca from "../../assets/imgs/avatar.jpg";
 
+import { getFeeds } from "../../api/index.old";
+
 export default class FeedCard extends React.Component {
 
     constructor(props) {
         super(props);
-
-        const {feed, navegador} = this.props;
-        this.state = {
-            feed: feed,
-            navegador: navegador
-        };
+        this.state ={
+            feed: this.props.feed,
+            navegador: this.props.navegador,
+        }
     }
 
 
@@ -30,10 +30,10 @@ export default class FeedCard extends React.Component {
                         <ImageProduto source={LogoMarca}></ImageProduto>
                         
                             <EsquerdaDaMesmaLinha>
-                                <NomedoProduto>{feed.produto.nome}  |  {"R$: " + feed.produto.preco}</NomedoProduto>
+                                <NomedoProduto>{feed.product.name}  |  {"R$: " + feed.product.price}</NomedoProduto>
                             </EsquerdaDaMesmaLinha>
                        
-                        <DescricaodoProdutoFeed>{feed.produto.descricao}</DescricaodoProdutoFeed>
+                        <DescricaodoProdutoFeed>{feed.product.description}</DescricaodoProdutoFeed>
                     </Card>
                    
                 </TouchableOpacity>

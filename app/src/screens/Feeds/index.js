@@ -4,7 +4,7 @@ import FeedCard from "../../components/FeedCard";
 import feedEstatico from "../../assets/produtos.json";
 import { Icon, Header } from "react-native-elements";
 import { CentralizadoNaMesmaLinha, InputPesquisa, EspacamentoIcon } from "../../assets/style";
-import { getFeeds } from "../../api";
+import { getFeeds } from "../../api/index.old";
 
 const Paginas = 4;
 
@@ -27,14 +27,24 @@ export default class Feeds extends React.Component {
     }
 
     carregarFeeds = () => {
-        
-        const feedsEstaticos = feedEstatico.feeds;
-        const { proximaPagina, filtrando } = this.state;
+        //const feedsEstaticos = feedEstatico.feeds;
+        const { proximaPagina, filtrando} = this.state;
 
         if (filtrando) {
             return;
         }
 
+        getFeeds().then((response) => 
+            this.setState({
+                feeds: response,
+                proximaPagina: proximaPagina + 1,
+                atualizando: false
+            })
+            .catch(function(error) {
+                console.log('Erro de conexão: ' + error.message);
+            })
+        )
+        /*
         const feeds = feedsEstaticos.filter((feed) =>
             feed._id <= proximaPagina * Paginas
         );
@@ -44,6 +54,7 @@ export default class Feeds extends React.Component {
             proximaPagina: proximaPagina + 1,
             atualizando: false
         });
+        */
     }
 
     atualizar = () => {

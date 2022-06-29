@@ -1,10 +1,14 @@
-const FEEDS_URL = "http://172.0.0.1:5001/"
+const FEEDS_URL = "http://192.168.1.39:5001/"
+const AVALIACOES_URL = "http://192.168.1.39:5002/"
 
-export const getFeeds = async (pagina) => {
+
+const acessarUrl = async (url) => {
     let promise = null;
 
+    console.log("acessando: " + url);
+
     try {
-        resposta = await fetch(FEEDS_URL + "feeds/" + pagina, { method: "GET" })
+        resposta = await fetch(url, { method: "GET" })
         if (resposta.ok) {
             promise = Promise.resolve(resposta.json());
         } else {
@@ -15,4 +19,24 @@ export const getFeeds = async (pagina) => {
     }
 
     return promise;
+}
+
+export const feedsIsAlive = async () => {
+    return acessarUrl(FEEDS_URL + "isalive");
+}
+
+export const getFeeds = async () => {
+    return acessarUrl(FEEDS_URL + "feeds");
+}
+
+export const getFeed = async (feedId) => {
+    return acessarUrl(FEEDS_URL + "feed/" + feedId)
+}
+
+export const avaliacoesIsAlive = async () => {
+    return acessarUrl(AVALIACOES_URL + "isalive");
+}
+
+export const getAvaliacao = async (feedId) => {
+    return acessarUrl(AVALIACOES_URL + "avaliacao/" + feedId);
 }

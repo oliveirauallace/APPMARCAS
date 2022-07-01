@@ -104,17 +104,17 @@ export const TextAvalicao = styled.Text`
 `;
 
 export const ImageProduto = styled.Image`
-    width: 100px;
-    height: 100px;
-    margin-left: 10px;
+    width: 250px;
+    height: 250px;
+    margin-left: 70px;
     border-radius: 80px;
 `;
 
 export const ImageProdutoDetalhe = styled.Image`
-    width: 90px;
-    height: 90px;
+    width: 200px;
+    height: 200px;
     margin-top:10px;
-    margin-left: 160px;
+    margin-left: 110px;
     border-radius: 80px;
 `;
 

@@ -1,5 +1,6 @@
-const FEEDS_URL = "http://192.168.1.39:5001/"
-const AVALIACOES_URL = "http://192.168.1.39:5002/"
+const FEEDS_URL = "http://172.31.20.164:5001/"
+const AVALIACOES_URL = "http://172.31.20.164:5002/"
+const IMAGENS_URL = "http://172.31.20.164:5005/"
 
 
 const acessarUrl = async (url) => {
@@ -39,4 +40,12 @@ export const avaliacoesIsAlive = async () => {
 
 export const getAvaliacao = async (feedId) => {
     return acessarUrl(AVALIACOES_URL + "avaliacao/" + feedId);
+}
+
+export const getImagem = (imagem) => {
+    return { uri: IMAGENS_URL + imagem };
+}
+
+export const getFeedsPorProduto = async (nomeProduto) => {
+    return acessarUrl(FEEDS_URL + "feeds_por_produto/" + nomeProduto)
 }

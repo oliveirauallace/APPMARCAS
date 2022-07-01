@@ -2,9 +2,7 @@ import React from "react";
 import { TouchableOpacity} from "react-native";
 import { Card } from "react-native-elements";
 import {ImageProduto, NomedoProduto, DescricaodoProdutoFeed, EsquerdaDaMesmaLinha} from "../../assets/style";
-import LogoMarca from "../../assets/imgs/avatar.jpg";
-
-import { getFeeds } from "../../api/index.old";
+import { getFeeds, getImagem } from "../../api/index.old";
 
 export default class FeedCard extends React.Component {
 
@@ -27,7 +25,7 @@ export default class FeedCard extends React.Component {
                     navegador.navigate("Detalhes", { feedId: feed._id });
                 }}>
                     <Card>
-                        <ImageProduto source={LogoMarca}></ImageProduto>
+                        <ImageProduto source={getImagem(feed.product.blobs[0].file)}></ImageProduto>
                         
                             <EsquerdaDaMesmaLinha>
                                 <NomedoProduto>{feed.product.name}  |  {"R$: " + feed.product.price}</NomedoProduto>

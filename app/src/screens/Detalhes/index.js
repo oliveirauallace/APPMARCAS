@@ -6,8 +6,7 @@ import { ScrollView } from "react-native-gesture-handler";
 import {NomedoProduto, DescricaodoProduto, PrecodoProduto, TextPromocional, NomeDetalhesProduto, 
 EsquerdaDaMesmaLinha, Espacamento, Cabecalho, TextComentarios, ViewAvaliacao, 
 ImageProdutoDetalhe, TextAvalicao, AutorDataAvalicao } from "../../assets/style";
-import LogoMarca from "../../assets/imgs/avatar.jpg";
-import { getFeed, getAvaliacao } from "../../api/index.old";
+import { getFeed, getAvaliacao, getImagem } from "../../api/index.old";
 
 const Paginas = 2;
 
@@ -84,7 +83,7 @@ export default class Detalhes extends React.Component {
                     />
                     <ScrollView>
                         <View>
-                            <ImageProdutoDetalhe source={LogoMarca}></ImageProdutoDetalhe>
+                            <ImageProdutoDetalhe source={getImagem(feed.product.blobs[0].file)}></ImageProdutoDetalhe>
                             <View style={{ padding: 8 }}>
                                 <Espacamento />
                                 <NomedoProduto>{feed.product.name}</NomedoProduto>  

@@ -1,7 +1,6 @@
 import React from "react";
 import { View, FlatList } from "react-native";
 import FeedCard from "../../components/FeedCard";
-import feedEstatico from "../../assets/produtos.json";
 import { Icon, Header } from "react-native-elements";
 import { CentralizadoNaMesmaLinha, InputPesquisa, EspacamentoIcon } from "../../assets/style";
 import { getFeeds } from "../../api/index.old";
@@ -27,7 +26,6 @@ export default class Feeds extends React.Component {
     }
 
     carregarFeeds = () => {
-        //const feedsEstaticos = feedEstatico.feeds;
         const { proximaPagina, filtrando} = this.state;
 
         if (filtrando) {
@@ -37,6 +35,7 @@ export default class Feeds extends React.Component {
         getFeeds().then((response) => 
             this.setState({
                 feeds: response,
+                todosFeeds: response,
                 proximaPagina: proximaPagina + 1,
                 atualizando: false
             })
@@ -44,17 +43,6 @@ export default class Feeds extends React.Component {
                 console.log('Erro de conexão: ' + error.message);
             })
         )
-        /*
-        const feeds = feedsEstaticos.filter((feed) =>
-            feed._id <= proximaPagina * Paginas
-        );
-
-        this.setState({
-            feeds: feeds,
-            proximaPagina: proximaPagina + 1,
-            atualizando: false
-        });
-        */
     }
 
     atualizar = () => {
@@ -76,11 +64,10 @@ export default class Feeds extends React.Component {
     }
 
     buscarFeeds = () => {
-        const feedsEstaticos = feedEstatico.feeds;
         const { nomedoProduto } = this.state;
 
-        let feeds = feedsEstaticos.filter((feed) =>
-            feed.produto.nome.toLowerCase().includes(
+        const feeds = this.state.todosFeeds.filter((feed) =>
+            feed.product.name.toLowerCase().includes(
                 nomedoProduto.toLowerCase()
             ));
         
@@ -104,7 +91,10 @@ export default class Feeds extends React.Component {
                     value={nomedoProduto}
                 />
                 <EspacamentoIcon/>
-                <Icon color={'#154c79'} style={{ padding: 8}} size={30} name="search" onPress={() => {this.buscarFeeds()}}/>
+                <Icon color={'#154c79'} style={{ padding: 8}} size={30} name="search" 
+                onPress={() => {
+                    this.setState({feeds:[]});
+                    this.buscarFeeds()}}/>
             </CentralizadoNaMesmaLinha>
         );
     }
@@ -114,7 +104,9 @@ export default class Feeds extends React.Component {
 
         return(
             <>
-            <Header containerStyle={{ backgroundColor: '#99ccff'}} centerComponent={this.barradePesquisa()}></Header>
+            <Header 
+                containerStyle={{ backgroundColor: '#99ccff'}} 
+                centerComponent={this.barradePesquisa()}></Header>
             <FlatList
                 data = {feeds}
                 onEndReached = { () => { this.carregarFeeds() }}

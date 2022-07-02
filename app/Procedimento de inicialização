@@ -1,0 +1,28 @@
+Procedimento para execução do app
+
+Primeiramente é necessário a execução dos serviços
+
+Em seguida, realize a conexão com o banco de dados (Utilizei o SQL Workband para conexão)
+
+A porta utilizada foi a 5004, que está inserida no docker-compose
+
+Alimente o banco de dados com os insertes que estão dentro do arquivo produtos.sql que está dentro da pasta src
+
+Para realizar a reprodução, utilizamos o expo. 
+
+Primeiramente é preciso baixar o aplicativo do expo na playstore
+
+Em seguida, no seu computador, execute os comandos de instalação abaixo
+
+Navegue a raiz do sistema 
+
+Em seguida, aplique o comando: npm install --global expo-cli
+
+Acesse a pasta app que está no caminho /avaliacaoV1/app
+
+e aplique o comando expo start
+
+Quando o expo inicializar, aponte a câmera do celular no qr code e aguarde carregar. 
+
+
+
